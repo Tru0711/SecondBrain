@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider } from './context/AuthContext';
 import PrivateRoute from './components/PrivateRoute';
 import Navbar from './components/Navbar';
@@ -20,49 +20,22 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
 
-            {/* Private routes */}
+            {/* Private routes with Navbar */}
             <Route
-              path="/"
+              path="/*"
               element={
                 <PrivateRoute>
-                  <Navbar />
-                  <Dashboard />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/tasks"
-              element={
-                <PrivateRoute>
-                  <Navbar />
-                  <Tasks />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/add"
-              element={
-                <PrivateRoute>
-                  <Navbar />
-                  <AddTask />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/tasks/:id"
-              element={
-                <PrivateRoute>
-                  <Navbar />
-                  <EditTask />
-                </PrivateRoute>
-              }
-            />
-            <Route
-              path="/history"
-              element={
-                <PrivateRoute>
-                  <Navbar />
-                  <History />
+                  <>
+                    <Navbar />
+                    <Routes>
+                      <Route path="/" element={<Dashboard />} />
+                      <Route path="/tasks" element={<Tasks />} />
+                      <Route path="/add" element={<AddTask />} />
+                      <Route path="/tasks/:id" element={<EditTask />} />
+                      <Route path="/history" element={<History />} />
+                      <Route path="*" element={<Navigate to="/" replace />} />
+                    </Routes>
+                  </>
                 </PrivateRoute>
               }
             />
