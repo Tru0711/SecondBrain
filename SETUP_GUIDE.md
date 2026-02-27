@@ -1,4 +1,4 @@
-# BSE Smart Task Tracker - Setup & Startup Guide
+# secondBrain Task Tracker - Setup & Startup Guide
 
 ## Project Structure
 

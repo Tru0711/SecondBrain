@@ -1,4 +1,4 @@
-# ✅ BSE Smart Task Tracker - Workspace Setup Complete!
+# ✅ secondBrain Task Tracker - Workspace Setup Complete!
 
 **Date:** February 27, 2026
 

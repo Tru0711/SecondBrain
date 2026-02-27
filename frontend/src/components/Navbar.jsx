@@ -5,7 +5,7 @@ export default function Navbar() {
     <nav className="bg-white shadow-md">
       <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
         <Link to="/" className="text-2xl font-bold text-red-600">
-          BSE Task Tracker
+          secondBrain Task Tracker
         </Link>
         <div className="flex gap-6 items-center">
           <Link 

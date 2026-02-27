@@ -1,4 +1,4 @@
-# BSE Smart Task Tracker - Quick Reference
+# secondBrain Task Tracker - Quick Reference
 
 ## Quick Start (In PowerShell)
 
@@ -114,5 +114,5 @@ npm run preview  # Preview production build
 ---
 
 **Created:** February 27, 2026
-**Project:** BSE Smart Task Tracker
+**Project:** secondBrain Task Tracker
 **Stack:** Node.js + Express + MongoDB + React + Vite + Tailwind CSS

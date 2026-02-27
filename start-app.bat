@@ -1,9 +1,9 @@
 @echo off
-REM Start BSE Smart Task Tracker - Backend and Frontend
+REM Start secondBrain Task Tracker - Backend and Frontend
 
 echo.
 echo ================================================
-echo BSE Smart Task Tracker - Startup Script
+echo secondBrain Task Tracker - Startup Script
 echo ================================================
 echo.
 
