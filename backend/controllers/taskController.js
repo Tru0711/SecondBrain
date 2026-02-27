@@ -14,6 +14,7 @@ exports.createTask = async (req, res, next) => {
     }
 
     const task = new Task({
+      user: req.user.id,
       title,
       description,
       category,
@@ -43,7 +44,10 @@ exports.createTask = async (req, res, next) => {
 // Get all tasks (excluding deleted ones)
 exports.getAllTasks = async (req, res, next) => {
   try {
-    const tasks = await Task.find({ isDeleted: false }).sort({ createdAt: -1 });
+    const tasks = await Task.find({ 
+      user: req.user.id,
+      isDeleted: false 
+    }).sort({ createdAt: -1 });
 
     res.status(200).json({
       success: true,

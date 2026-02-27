@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const { protect } = require('../middleware/authMiddleware');
 const {
   createTask,
   getAllTasks,
@@ -7,6 +8,9 @@ const {
   updateTask,
   deleteTask,
 } = require('../controllers/taskController');
+
+// All routes are protected
+router.use(protect);
 
 // Routes
 router.post('/', createTask);

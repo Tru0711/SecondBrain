@@ -9,6 +9,27 @@ const api = axios.create({
   },
 });
 
+// Add JWT token to requests
+api.interceptors.request.use(
+  (config) => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      config.headers.Authorization = `Bearer ${token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
+
+// Auth API endpoints
+export const authAPI = {
+  register: (userData) => api.post('/auth/register', userData),
+  login: (credentials) => api.post('/auth/login', credentials),
+  getMe: () => api.get('/auth/me'),
+};
+
 // Task API endpoints
 export const taskAPI = {
   getAllTasks: () => api.get('/tasks'),
