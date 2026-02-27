@@ -1,6 +1,6 @@
 import { useState } from 'react';
 
-export default function TaskForm({ initialData, onSubmit, loading }) {
+export default function TaskForm({ initialData, onSubmit, loading, submitButtonText = 'Save Task' }) {
   const [formData, setFormData] = useState(
     initialData || {
       title: '',
@@ -110,7 +110,7 @@ export default function TaskForm({ initialData, onSubmit, loading }) {
         disabled={loading}
         className="w-full bg-red-600 text-white font-semibold py-2 rounded hover:bg-red-700 transition disabled:opacity-50"
       >
-        {loading ? 'Saving...' : 'Save Task'}
+        {loading ? 'Saving...' : submitButtonText}
       </button>
     </form>
   );
